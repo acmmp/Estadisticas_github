@@ -18,7 +18,7 @@ function GitHubStats() {
       })
       .catch(error => {
         console.error('Error fetching data:', error);
-        setError('Failed to load data: ' + error.message);
+        setError('Failed to load data: ' + (error.response?.data?.message || error.message));
         setLoading(false);
       });
   }, []);
